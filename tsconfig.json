@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "lib": ["ES6"],
+        "sourceMap": true,
+        "outDir": "./out",
+        "rootDir": "./src",
+        "strict": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

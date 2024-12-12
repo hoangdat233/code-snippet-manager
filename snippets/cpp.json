@@ -1,0 +1,66 @@
+{
+    "Console log": {
+        "prefix": "log",
+        "body": "console.log('${1:message}');",
+        "description": "Log a message to the console"
+    },
+    "for loop": {
+        "prefix": "for",
+        "body": "for (let i = 0; i < ${1:10}; i++) { \n\t$0\n}",
+        "description": "A basic for loop"
+    },
+    "if statement": {
+        "prefix": "if",
+        "body": "if (${1:condition}) {\n\t$0\n}",
+        "description": "An if statement"
+    },
+    "function declaration": {
+        "prefix": "func",
+        "body": "function ${1:functionName}(${2:parameters}) {\n\t$0\n}",
+        "description": "A basic function declaration"
+    },
+    "class definition": {
+        "prefix": "class",
+        "body": "class ${1:ClassName} {\n\tconstructor(${2:parameters}) {\n\t\t$0\n\t}\n}",
+        "description": "A basic class definition"
+    },
+    "push": {
+        "prefix": "push",
+        "body": "\tvoid push(Node*& top_Node, ElementCount* counts) {     Node* newNode = new Node;     newNode->counts = counts;     newNode->next = top_Node;     top_Node = newNode; }",
+        "description": "Custom snippet: push"
+    },
+    "struct": {
+        "prefix": "struct",
+        "body": [
+            "struct ElementCount {\r",
+            "    char element;\r",
+            "    int count;\r",
+            "    ElementCount* next;\r",
+            "};"
+        ],
+        "description": "Custom snippet: struct"
+    },
+    "add_element": {
+        "prefix": "add_element",
+        "body": [
+            "ElementCount* add_element(ElementCount* head, char element, int count) {\r",
+            "    ElementCount* newNode = new ElementCount{element, count, nullptr};\r",
+            "    if (!head) return newNode;\r",
+            "\r",
+            "    ElementCount* cur = head;\r",
+            "    while (cur) {\r",
+            "        if (cur->element == element) {\r",
+            "            cur->count += count;\r",
+            "            delete newNode;\r",
+            "            return head;\r",
+            "        }\r",
+            "        if (!cur->next) break;\r",
+            "        cur = cur->next;\r",
+            "    }\r",
+            "    cur->next = newNode;\r",
+            "    return head;\r",
+            "}"
+        ],
+        "description": "Custom snippet: add_element"
+    }
+}
